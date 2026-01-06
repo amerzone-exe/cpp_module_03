@@ -1,40 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ScavTrap.cpp                                       :+:      :+:    :+:   */
+/*   FragTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jpiquet <jpiquet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/06 09:00:29 by jpiquet           #+#    #+#             */
-/*   Updated: 2026/01/06 14:47:16 by jpiquet          ###   ########.fr       */
+/*   Updated: 2026/01/06 14:03:04 by jpiquet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
-#include "ScavTrap.hpp"
+#include "FragTrap.hpp"
 
 /*Default constructor*/
-ScavTrap::ScavTrap()
+FragTrap::FragTrap()
 {
 }
 
 /*Initialization constructor*/
-ScavTrap::ScavTrap( std::string name ) : ClapTrap(name), _gateKeep(false)
+FragTrap::FragTrap( std::string name ) : ClapTrap(name)
 {
 	this->_hitpoint = 100;
-	this->_energypoint = 50;
-	this->_attackdamage = 20;
-	std::cout << "ScavTrap constructor called" << std::endl;
+	this->_energypoint = 100;
+	this->_attackdamage = 30;
+	std::cout << "FragTrap constructor called" << std::endl;
 }
 
 /*Copy constructor*/
-ScavTrap::ScavTrap( ScavTrap const & src)
+FragTrap::FragTrap( FragTrap const & src)
 {
 	*this = src;
 }
 
 /*Assignation operator overload*/
-ScavTrap& ScavTrap::operator=(ScavTrap const & rhs)
+FragTrap& FragTrap::operator=(FragTrap const & rhs)
 {
 	this->_name = rhs._name;
 	this->_hitpoint = rhs._hitpoint;
@@ -45,50 +45,43 @@ ScavTrap& ScavTrap::operator=(ScavTrap const & rhs)
 }
 
 /*Destructor*/
-ScavTrap::~ScavTrap( void )
+FragTrap::~FragTrap( void )
 {
-	std::cout << "ScavTrap destructor called" << std::endl;
+	std::cout << "FragTrap destructor called" << std::endl;
 }
 
 /*Attack the `target` passed in parameters.
 If there not enought energy & hit points do nothing*/
-void	ScavTrap::attack( const std::string& target )
+void	FragTrap::attack( const std::string& target )
 {
 	if (this->_energypoint == 0)
 	{
-		std::cout << "ScavTrap " << this->_name << " has no energy points left, he can't attack !" << std::endl;
+		std::cout << "FragTrap " << this->_name << " has no energy points left, he can't attack !" << std::endl;
 		return ;
 	}
 	if (this->_hitpoint == 0)
 	{
-		std::cout << "ScavTrap " << this->_name << " is dead, he can't attack !" << std::endl;
+		std::cout << "FragTrap " << this->_name << " is dead, he can't attack !" << std::endl;
 		return ;
 	}
 
 	this->_energypoint -= 1;
-	std::cout << "ScavTrap " << this->_name << " attacks " << target << ", causing "
+	std::cout << "FragTrap " << this->_name << " attacks " << target << ", causing "
 	<< this->_attackdamage << " points of damage !" << std::endl;
 }
 
-/*Pass the private attribute `_gateKeep` to true & print message*/
-void	ScavTrap::guardGate( void )
+/*Make FragTrap asking for an high fives*/
+void	FragTrap::highFivesGuys( void )
 {
 	if (this->_energypoint == 0)
 	{
-		std::cout << "FragTrap " << this->_name << " has no energy points left, he can't guard gate !" << std::endl;
+		std::cout << "FragTrap " << this->_name << " has no energy points left, he can't ask for an high fives !" << std::endl;
 		return ;
 	}
 	if (this->_hitpoint == 0)
 	{
-		std::cout << "FragTrap " << this->_name << " is dead, he can't guard gate !" << std::endl;
+		std::cout << "FragTrap " << this->_name << " is dead, he can't ask for an high fives !" << std::endl;
 		return ;
 	}
-
-	if (this->_gateKeep == true)
-		std::cout << "ScavTrap is already in Gate keeper mode" << std::endl;
-	else
-	{
-		this->_gateKeep = true;
-		std::cout << "ScavTrap is now in Gate keeper mode" << std::endl;
-	}
+	std::cout << "Hey ! High fives guys ?! C'mon !" << std::endl;
 }
