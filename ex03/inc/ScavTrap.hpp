@@ -6,7 +6,7 @@
 /*   By: jpiquet <jpiquet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/06 08:47:13 by jpiquet           #+#    #+#             */
-/*   Updated: 2026/01/07 11:44:45 by jpiquet          ###   ########.fr       */
+/*   Updated: 2026/01/07 17:32:24 by jpiquet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,8 +28,8 @@ class ScavTrap : virtual public ClapTrap
 		ScavTrap& operator=(ScavTrap const & rhs);
 		~ScavTrap( void );
 
-		void		attack( const std::string& target );
-		void		guardGate( void );
+		void			attack( const std::string& target );
+		void			guardGate( void );
 };
 
 #endif

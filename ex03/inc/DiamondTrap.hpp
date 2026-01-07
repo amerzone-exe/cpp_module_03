@@ -6,7 +6,7 @@
 /*   By: jpiquet <jpiquet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/06 14:56:26 by jpiquet           #+#    #+#             */
-/*   Updated: 2026/01/07 10:02:15 by jpiquet          ###   ########.fr       */
+/*   Updated: 2026/01/07 17:33:46 by jpiquet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,10 @@ class DiamondTrap : public FragTrap, public ScavTrap
 
 		void	attack( const std::string& target );
 		void	whoAmI( void );
+
+		unsigned int		getHitPoint( void );
+		unsigned int		getEnergyPoint( void );
+		unsigned int		getAttackDamage( void );
 };
 
 #endif
