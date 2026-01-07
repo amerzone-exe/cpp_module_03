@@ -6,7 +6,7 @@
 /*   By: jpiquet <jpiquet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/06 09:00:29 by jpiquet           #+#    #+#             */
-/*   Updated: 2026/01/07 17:45:05 by jpiquet          ###   ########.fr       */
+/*   Updated: 2026/01/07 19:00:08 by jpiquet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,11 +28,11 @@ FragTrap::FragTrap( std::string name ) : ClapTrap(name)
 	this->_hitPoint = 100;
 	this->_energyPoint = 100;
 	this->_attackDamage = 30;
-	std::cout << "FragTrap initialization's called with the name : " << name << std::endl;
+	std::cout << "FragTrap initialization's name constructor called" << std::endl;
 }
 
 /*Copy constructor*/
-FragTrap::FragTrap( FragTrap const & src)
+FragTrap::FragTrap( FragTrap const & src) : ClapTrap( src )
 {
 	*this = src;
 	std::cout << "FragTrap copy constructor called" << std::endl;
@@ -41,10 +41,7 @@ FragTrap::FragTrap( FragTrap const & src)
 /*Assignation operator overload*/
 FragTrap& FragTrap::operator=(FragTrap const & rhs)
 {
-	this->_name = rhs._name;
-	this->_hitPoint = rhs._hitPoint;
-	this->_energyPoint = rhs._energyPoint;
-	this->_attackDamage = rhs._attackDamage;
+	ClapTrap::operator=(rhs);
 
 	return *this;
 }
@@ -52,7 +49,7 @@ FragTrap& FragTrap::operator=(FragTrap const & rhs)
 /*Destructor*/
 FragTrap::~FragTrap( void )
 {
-	std::cout << "FragTrap destructor called with the name : " << this->_name << std::endl;
+	std::cout << "FragTrap destructor called" << std::endl;
 }
 
 /*Attack the `target` passed in parameters.

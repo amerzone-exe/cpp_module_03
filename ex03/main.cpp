@@ -6,7 +6,7 @@
 /*   By: jpiquet <jpiquet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/05 18:38:41 by jpiquet           #+#    #+#             */
-/*   Updated: 2026/01/07 17:36:03 by jpiquet          ###   ########.fr       */
+/*   Updated: 2026/01/07 19:04:35 by jpiquet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,6 +58,23 @@ int main( void )
 	bobby.highFivesGuys();
 	bobby.guardGate();
 	bobby.whoAmI();
+	std::cout << std::endl;
+
+	std::cout << "Create DiamondTrap class Billy and assign it to Bobby and do the same test as before" << std::endl;
+	std::cout << std::endl;
+
+	DiamondTrap billy("Billy");
+
+	bobby = billy;
+
+	bobby.attack("ENEMY");
+	bobby.takeDamage(40);
+	bobby.takeDamage(20);
+	bobby.attack("ENEMY");
+	bobby.highFivesGuys();
+	bobby.guardGate();
+	bobby.whoAmI();
+
 	std::cout << std::endl;
 
 	return 0;

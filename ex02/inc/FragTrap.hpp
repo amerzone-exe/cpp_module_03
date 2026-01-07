@@ -6,7 +6,7 @@
 /*   By: jpiquet <jpiquet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/06 08:47:13 by jpiquet           #+#    #+#             */
-/*   Updated: 2026/01/06 13:50:42 by jpiquet          ###   ########.fr       */
+/*   Updated: 2026/01/07 18:49:29 by jpiquet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ class FragTrap : public ClapTrap
 		~FragTrap( void );
 
 		void		attack( const std::string& target );
-		void		highFivesGuys( void );
+		void		highFivesGuys( void ) const;
 };
 
 #endif
