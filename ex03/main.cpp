@@ -6,7 +6,7 @@
 /*   By: jpiquet <jpiquet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/05 18:38:41 by jpiquet           #+#    #+#             */
-/*   Updated: 2026/01/06 16:12:20 by jpiquet          ###   ########.fr       */
+/*   Updated: 2026/01/07 09:39:16 by jpiquet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,9 @@
 
 int main( void )
 {
-	ClapTrap john("John");
-	ScavTrap steven("Steven");
-	FragTrap michael("Michael");
+	// ClapTrap john("John");
+	// ScavTrap steven("Steven");
+	// FragTrap michael("Michael");
 	DiamondTrap bobby("Bobby");
 	std::cout << std::endl;
 
@@ -46,10 +46,10 @@ int main( void )
 	// michael.highFivesGuys();
 	// std::cout << std::endl;
 
-	bobby.ScavTrap::attack("ENEMY");
+	bobby.attack("ENEMY");
 	bobby.takeDamage(40);
-	bobby.ScavTrap::takeDamage(20);
-	bobby.ScavTrap::attack("ENEMY");
+	bobby.takeDamage(20);
+	bobby.attack("ENEMY");
 	bobby.highFivesGuys();
 	bobby.guardGate();
 	bobby.whoAmI();

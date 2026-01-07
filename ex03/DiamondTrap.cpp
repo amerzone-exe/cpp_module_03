@@ -6,7 +6,7 @@
 /*   By: jpiquet <jpiquet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/06 14:55:43 by jpiquet           #+#    #+#             */
-/*   Updated: 2026/01/06 16:29:39 by jpiquet          ###   ########.fr       */
+/*   Updated: 2026/01/07 11:42:49 by jpiquet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,17 +14,23 @@
 #include <iostream>
 
 /*Default constructor*/
-DiamondTrap::DiamondTrap()
+DiamondTrap::DiamondTrap() : ClapTrap(), _name("no_FragTrap_name")
 {
-}
-
-/*Initialization constructor*/
-DiamondTrap::DiamondTrap( std::string name ) : _name(name)
-{
-	this->ClapTrap::_name = name + "_clap_name";
 	this->_hitpoint = FragTrap::_hitpoint;
 	this->_energypoint = ScavTrap::_energypoint;
 	this->_attackdamage = FragTrap::_attackdamage;
+	std::cout << "DiamondTrap constructor called" << std::endl;
+}
+
+/*Initialization constructor*/
+DiamondTrap::DiamondTrap( std::string name ) : ClapTrap(name + "_clap_name"), _name(name)
+{
+	this->_hitpoint = FragTrap::_hitpoint;
+	// std::cout << "hitpoint : "<< FragTrap::_hitpoint << std::endl;
+	this->_energypoint = ScavTrap::_energypoint;
+	// std::cout << "energypoint : "<< ScavTrap::_energypoint << std::endl;
+	this->_attackdamage = FragTrap::_attackdamage;
+	// std::cout << "attack damage : "<< FragTrap::_attackdamage << std::endl;
 	std::cout << "DiamondTrap constructor called" << std::endl;
 }
 
@@ -52,8 +58,11 @@ DiamondTrap::~DiamondTrap( void )
 }
 
 void	DiamondTrap::attack( const std::string& target )
+{
+	ScavTrap::attack( target );
+}
 
 void	DiamondTrap::whoAmI( void )
 {
-	std::cout << "DiamondTrap name : " << this->_name << ", it's ClapTrap name :" << this->ClapTrap::_name << std::endl;
+	std::cout << "DiamondTrap name : " << this->_name << ", it's ClapTrap name :" << ClapTrap::_name << std::endl;
 }

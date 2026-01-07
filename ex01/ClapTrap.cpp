@@ -6,7 +6,7 @@
 /*   By: jpiquet <jpiquet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/05 17:12:04 by jpiquet           #+#    #+#             */
-/*   Updated: 2026/01/06 13:17:52 by jpiquet          ###   ########.fr       */
+/*   Updated: 2026/01/07 11:22:52 by jpiquet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,19 +14,21 @@
 #include "ClapTrap.hpp"
 
 /*Default constructor*/
-ClapTrap::ClapTrap( void )
+ClapTrap::ClapTrap( void ) : _name( "noname" ), _hitpoint( 10 ), _energypoint( 10 ), _attackdamage ( 0 )
 {
+	std::cout << "ClapTrap default constructor called" << std::endl;
 }
 
 /*Initialization constructor*/
-ClapTrap::ClapTrap( std::string name ) : _name( name ), _hitpoint( 100 ), _energypoint( 50 ), _attackdamage ( 20 )
+ClapTrap::ClapTrap( std::string name ) : _name( name ), _hitpoint( 10 ), _energypoint( 10 ), _attackdamage ( 0 )
 {
-	std::cout << "ClapTrap constructor called" << std::endl;
+	std::cout << "ClapTrap initialization's name constructor called" << std::endl;
 }
 
 /*Copy constructor*/
 ClapTrap::ClapTrap( ClapTrap const & src)
 {
+	std::cout << "ClapTrap copy constructor called" << std::endl;
 	*this = src;
 }
 

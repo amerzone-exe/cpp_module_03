@@ -6,7 +6,7 @@
 /*   By: jpiquet <jpiquet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/06 09:00:29 by jpiquet           #+#    #+#             */
-/*   Updated: 2026/01/06 14:03:04 by jpiquet          ###   ########.fr       */
+/*   Updated: 2026/01/07 11:39:13 by jpiquet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,12 @@
 #include "FragTrap.hpp"
 
 /*Default constructor*/
-FragTrap::FragTrap()
+FragTrap::FragTrap() : ClapTrap()
 {
+	this->_hitpoint = 100;
+	this->_energypoint = 100;
+	this->_attackdamage = 30;
+	std::cout << "FragTrap default constructor called" << std::endl;
 }
 
 /*Initialization constructor*/
@@ -24,13 +28,14 @@ FragTrap::FragTrap( std::string name ) : ClapTrap(name)
 	this->_hitpoint = 100;
 	this->_energypoint = 100;
 	this->_attackdamage = 30;
-	std::cout << "FragTrap constructor called" << std::endl;
+	std::cout << "FragTrap initialization's name constructor called" << std::endl;
 }
 
 /*Copy constructor*/
 FragTrap::FragTrap( FragTrap const & src)
 {
 	*this = src;
+	std::cout << "FragTrap copy constructor called" << std::endl;
 }
 
 /*Assignation operator overload*/
