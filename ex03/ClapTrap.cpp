@@ -6,7 +6,7 @@
 /*   By: jpiquet <jpiquet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/05 17:12:04 by jpiquet           #+#    #+#             */
-/*   Updated: 2026/01/07 17:45:13 by jpiquet          ###   ########.fr       */
+/*   Updated: 2026/01/14 13:49:53 by jpiquet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,31 +22,33 @@ ClapTrap::ClapTrap( void ) : _name( "noname" ), _hitPoint( 10 ), _energyPoint( 1
 /*Initialization constructor*/
 ClapTrap::ClapTrap( std::string name ) : _name( name ), _hitPoint( 10 ), _energyPoint( 10 ), _attackDamage ( 0 )
 {
-	std::cout << "ClapTrap initialization's constructor called with the name : " << name << std::endl;
+	std::cout << "ClapTrap initialization's name constructor called" << std::endl;
 }
 
 /*Copy constructor*/
-ClapTrap::ClapTrap( ClapTrap const & src)
+ClapTrap::ClapTrap( ClapTrap const & src) : _name( src._name ), _hitPoint( src._hitPoint ), 
+											_energyPoint( src._energyPoint ), _attackDamage ( src._attackDamage )
 {
 	std::cout << "ClapTrap copy constructor called" << std::endl;
-	*this = src;
 }
 
 /*Assignation operator overload*/
-ClapTrap& ClapTrap::operator=(ClapTrap const & rhs)
+ClapTrap& ClapTrap::operator=( ClapTrap const & rhs )
 {
-	this->_name = rhs._name;
-	this->_hitPoint = rhs._hitPoint;
-	this->_energyPoint = rhs._energyPoint;
-	this->_attackDamage = rhs._attackDamage;
-
+	if (this != &rhs)
+	{
+		this->_name = rhs._name;
+		this->_hitPoint = rhs._hitPoint;
+		this->_energyPoint = rhs._energyPoint;
+		this->_attackDamage = rhs._attackDamage;
+	}
 	return *this;
 }
 
 /*Destructor*/
 ClapTrap::~ClapTrap( void )
 {
-	std::cout << "ClapTrap destructor called with the name : " << this->_name << std::endl;
+	std::cout << "ClapTrap destructor called" << std::endl;
 }
 
 /*Attack the `target` passed in parameters.

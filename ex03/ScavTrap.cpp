@@ -6,7 +6,7 @@
 /*   By: jpiquet <jpiquet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/06 09:00:29 by jpiquet           #+#    #+#             */
-/*   Updated: 2026/01/07 19:00:42 by jpiquet          ###   ########.fr       */
+/*   Updated: 2026/01/14 08:58:00 by jpiquet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,8 +44,7 @@ ScavTrap::ScavTrap( ScavTrap const & src) : ClapTrap( src )
 /*Assignation operator overload*/
 ScavTrap& ScavTrap::operator=(ScavTrap const & rhs)
 {
-	ClapTrap::operator=(rhs);
-
+	std::cout << std::endl << "Called ScavTrap operator assignation !" << std::endl;
 	this->_gateKeep = rhs._gateKeep;
 	return *this;
 }
@@ -91,10 +90,10 @@ void	ScavTrap::guardGate( void )
 	}
 
 	if (this->_gateKeep == true)
-		std::cout << "ScavTrap is already in Gate keeper mode" << std::endl;
+		std::cout << "ScavTrap " << this->_name << " is already in Gate keeper mode" << std::endl;
 	else
 	{
 		this->_gateKeep = true;
-		std::cout << "ScavTrap is now in Gate keeper mode" << std::endl;
+		std::cout << "ScavTrap " << this->_name << " is now in Gate keeper mode" << std::endl;
 	}
 }

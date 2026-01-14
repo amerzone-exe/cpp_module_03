@@ -6,7 +6,7 @@
 /*   By: jpiquet <jpiquet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/05 17:12:04 by jpiquet           #+#    #+#             */
-/*   Updated: 2026/01/07 15:28:06 by jpiquet          ###   ########.fr       */
+/*   Updated: 2026/01/14 13:49:33 by jpiquet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,20 +26,22 @@ ClapTrap::ClapTrap( std::string name ) : _name( name ), _hitPoint( 10 ), _energy
 }
 
 /*Copy constructor*/
-ClapTrap::ClapTrap( ClapTrap const & src)
+ClapTrap::ClapTrap( ClapTrap const & src) : _name( src._name ), _hitPoint( src._hitPoint ), 
+											_energyPoint( src._energyPoint ), _attackDamage ( src._attackDamage )
 {
 	std::cout << "ClapTrap copy constructor called" << std::endl;
-	*this = src;
 }
 
 /*Assignation operator overload*/
-ClapTrap& ClapTrap::operator=(ClapTrap const & rhs)
+ClapTrap& ClapTrap::operator=( ClapTrap const & rhs )
 {
-	this->_name = rhs._name;
-	this->_hitPoint = rhs._hitPoint;
-	this->_energyPoint = rhs._energyPoint;
-	this->_attackDamage = rhs._attackDamage;
-
+	if (this != &rhs)
+	{
+		this->_name = rhs._name;
+		this->_hitPoint = rhs._hitPoint;
+		this->_energyPoint = rhs._energyPoint;
+		this->_attackDamage = rhs._attackDamage;
+	}
 	return *this;
 }
 

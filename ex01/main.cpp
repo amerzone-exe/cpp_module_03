@@ -6,7 +6,7 @@
 /*   By: jpiquet <jpiquet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/05 18:38:41 by jpiquet           #+#    #+#             */
-/*   Updated: 2026/01/07 11:21:59 by jpiquet          ###   ########.fr       */
+/*   Updated: 2026/01/14 13:54:02 by jpiquet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int main( void )
 {
 	ClapTrap john("John");
 	ScavTrap steven("Steven");
-	ScavTrap billy;
+	ScavTrap billy("Billy");
 	std::cout << std::endl;
 
 	john.attack("Charlie");
@@ -37,10 +37,6 @@ int main( void )
 	steven.guardGate();
 	std::cout << std::endl;
 
-	billy.attack("Steven");
-	billy.takeDamage(5);
-	std::cout << std::endl;
-
 	std::cout << "Copying ScavTrap Steven into James" << std::endl;
 
 	ScavTrap james(steven);
@@ -52,7 +48,7 @@ int main( void )
 	james.guardGate();
 	std::cout << std::endl;
 
-	std::cout << "Assign Billy (noname) to Steven" << std::endl;
+	std::cout << "Copy by assignement Billy to Steven" << std::endl;
 
 	steven = billy;
 	steven.attack("Charlie");
