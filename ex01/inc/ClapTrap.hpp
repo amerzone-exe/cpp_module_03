@@ -6,7 +6,7 @@
 /*   By: jpiquet <jpiquet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/05 17:04:06 by jpiquet           #+#    #+#             */
-/*   Updated: 2026/01/14 12:57:56 by jpiquet          ###   ########.fr       */
+/*   Updated: 2026/01/15 14:48:21 by jpiquet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,12 +27,12 @@ class ClapTrap
 		ClapTrap( void );
 		ClapTrap( std::string name );
 		ClapTrap( ClapTrap const & src );
-		ClapTrap&	operator=( ClapTrap const & rhs );
-		~ClapTrap( void );
+		ClapTrap & operator=( ClapTrap const & rightSide );
+		virtual ~ClapTrap( void );
 
-		void		attack( const std::string& target );
-		void		takeDamage( unsigned int amount );
-		void		beRepaired( unsigned int amount );
+		virtual void	attack( const std::string& target );
+		void			takeDamage( unsigned int amount );
+		void			beRepaired( unsigned int amount );
 };
 
 #endif

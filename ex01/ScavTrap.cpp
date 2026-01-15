@@ -6,7 +6,7 @@
 /*   By: jpiquet <jpiquet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/06 09:00:29 by jpiquet           #+#    #+#             */
-/*   Updated: 2026/01/14 13:15:52 by jpiquet          ###   ########.fr       */
+/*   Updated: 2026/01/15 15:47:58 by jpiquet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,12 +38,12 @@ ScavTrap::ScavTrap( ScavTrap const & src) : ClapTrap( src )
 }
 
 /*Assignation operator overload*/
-ScavTrap& ScavTrap::operator=(ScavTrap const & rhs)
+ScavTrap& ScavTrap::operator=(ScavTrap const & rightSide)
 {
-	if (this != &rhs)
+	if (this != &rightSide)
 	{
-		ClapTrap::operator=( rhs );
-		this->_gateKeep = rhs._gateKeep;
+		ClapTrap::operator=( rightSide );
+		this->_gateKeep = rightSide._gateKeep;
 	}
 	return *this;
 }
@@ -68,7 +68,6 @@ void	ScavTrap::attack( const std::string& target )
 		std::cout << "ScavTrap " << this->_name << " is dead, he can't attack !" << std::endl;
 		return ;
 	}
-
 	this->_energyPoint -= 1;
 	std::cout << "ScavTrap " << this->_name << " attacks " << target << ", causing "
 	<< this->_attackDamage << " points of damage !" << std::endl;

@@ -6,7 +6,7 @@
 /*   By: jpiquet <jpiquet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/06 08:47:13 by jpiquet           #+#    #+#             */
-/*   Updated: 2026/01/07 17:31:57 by jpiquet          ###   ########.fr       */
+/*   Updated: 2026/01/15 10:54:56 by jpiquet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ class FragTrap : virtual public ClapTrap
 		FragTrap( void );
 		FragTrap( std::string name );
 		FragTrap( FragTrap const & src);
-		FragTrap& operator=(FragTrap const & rhs);
+		FragTrap& operator=(FragTrap const & rightSide);
 		~FragTrap( void );
 
 		void		attack( const std::string& target );

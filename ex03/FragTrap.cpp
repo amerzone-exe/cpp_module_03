@@ -6,7 +6,7 @@
 /*   By: jpiquet <jpiquet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/06 09:00:29 by jpiquet           #+#    #+#             */
-/*   Updated: 2026/01/14 15:49:20 by jpiquet          ###   ########.fr       */
+/*   Updated: 2026/01/15 15:50:53 by jpiquet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,12 +23,12 @@ FragTrap::FragTrap() : ClapTrap()
 }
 
 /*Initialization constructor*/
-FragTrap::FragTrap( std::string name ) : ClapTrap(name)
+FragTrap::FragTrap( std::string name ) : ClapTrap( name )
 {
 	this->_hitPoint = 100;
 	this->_energyPoint = 100;
 	this->_attackDamage = 30;
-	std::cout << "FragTrap initialization's name constructor called" << std::endl;
+	std::cout << "FragTrap initialization's name constructor called with the name " << name << std::endl;
 }
 
 /*Copy constructor*/
@@ -38,11 +38,11 @@ FragTrap::FragTrap( FragTrap const & src) : ClapTrap( src )
 }
 
 /*Assignation operator overload*/
-FragTrap& FragTrap::operator=(FragTrap const & rhs)
+FragTrap & FragTrap::operator=(FragTrap const & rightSide)
 {
-	if (this != &rhs)
+	if (this != &rightSide)
 	{
-		ClapTrap::operator=(rhs);
+		ClapTrap::operator=(rightSide);
 	}
 	return *this;
 }

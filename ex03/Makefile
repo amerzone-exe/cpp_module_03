@@ -2,7 +2,7 @@ NAME = NowItsWeird
 
 CXX = c++
 
-FLAGS = -Wall -Wextra -Werror -MMD -Wshadow -Wno-shadow -std=c++98
+FLAGS = -Wall -Wextra -Werror -MMD -g3 -Wshadow -Wno-shadow -std=c++98
 
 INC = inc
 

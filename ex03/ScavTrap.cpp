@@ -6,12 +6,9 @@
 /*   By: jpiquet <jpiquet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/06 09:00:29 by jpiquet           #+#    #+#             */
-/*   Updated: 2026/01/14 08:58:00 by jpiquet          ###   ########.fr       */
+/*   Updated: 2026/01/15 11:27:20 by jpiquet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include <iostream>
-#include "ScavTrap.hpp"
 
 #include <iostream>
 #include "ScavTrap.hpp"
@@ -31,21 +28,23 @@ ScavTrap::ScavTrap( std::string name ) : ClapTrap(name), _gateKeep(false)
 	this->_hitPoint = 100;
 	this->_energyPoint = 50;
 	this->_attackDamage = 20;
-	std::cout << "ScavTrap initialization's name constructor called" << std::endl;
+	std::cout << "ScavTrap initialization's name constructor called with the name "<< name << std::endl;
 }
 
 /*Copy constructor*/
 ScavTrap::ScavTrap( ScavTrap const & src) : ClapTrap( src )
 {
 	std::cout << "ScavTrap copy constructor called" << std::endl;
-	*this = src;
 }
 
 /*Assignation operator overload*/
-ScavTrap& ScavTrap::operator=(ScavTrap const & rhs)
+ScavTrap& ScavTrap::operator=(ScavTrap const & rightSide)
 {
-	std::cout << std::endl << "Called ScavTrap operator assignation !" << std::endl;
-	this->_gateKeep = rhs._gateKeep;
+	if (this != &rightSide)
+	{
+		ClapTrap::operator=( rightSide );
+		this->_gateKeep = rightSide._gateKeep;
+	}
 	return *this;
 }
 
@@ -90,10 +89,10 @@ void	ScavTrap::guardGate( void )
 	}
 
 	if (this->_gateKeep == true)
-		std::cout << "ScavTrap " << this->_name << " is already in Gate keeper mode" << std::endl;
+		std::cout << "ScavTrap is already in Gate keeper mode" << std::endl;
 	else
 	{
 		this->_gateKeep = true;
-		std::cout << "ScavTrap " << this->_name << " is now in Gate keeper mode" << std::endl;
+		std::cout << "ScavTrap is now in Gate keeper mode" << std::endl;
 	}
 }

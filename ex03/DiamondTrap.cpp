@@ -6,7 +6,7 @@
 /*   By: jpiquet <jpiquet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/06 14:55:43 by jpiquet           #+#    #+#             */
-/*   Updated: 2026/01/14 15:55:06 by jpiquet          ###   ########.fr       */
+/*   Updated: 2026/01/15 16:16:42 by jpiquet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,13 +39,12 @@ DiamondTrap::DiamondTrap( DiamondTrap const & src) : ScavTrap(src), FragTrap(src
 }
 
 /*Assignation operator overload*/
-DiamondTrap& DiamondTrap::operator=( DiamondTrap const & rhs )
+DiamondTrap& DiamondTrap::operator=( DiamondTrap const & rightSide )
 {
-	if (this != &rhs)
+	if (this != &rightSide)
 	{
-		ScavTrap::operator=( rhs );
-		FragTrap::operator=( rhs );
-		this->_name = rhs._name;
+		ScavTrap::operator=( rightSide );
+		this->_name = rightSide._name;
 	}
 	return *this;
 }
@@ -58,7 +57,8 @@ DiamondTrap::~DiamondTrap( void )
 
 void	DiamondTrap::attack( const std::string& target )
 {
-	ScavTrap::attack( target );
+	// ScavTrap::attack( target );
+	std::cout << _name << " jette du CACA BOUDIN sur " <<  target << std::endl;
 }
 
 void	DiamondTrap::whoAmI( void )

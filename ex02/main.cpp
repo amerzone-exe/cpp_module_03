@@ -6,7 +6,7 @@
 /*   By: jpiquet <jpiquet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/05 18:38:41 by jpiquet           #+#    #+#             */
-/*   Updated: 2026/01/14 13:10:42 by jpiquet          ###   ########.fr       */
+/*   Updated: 2026/01/15 10:24:08 by jpiquet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 int main( void )
 {
 	// ClapTrap john("John");
-	// ScavTrap steven("Steven");
+	ScavTrap steven("Steven");
 	FragTrap michael("Michael");
 	std::cout << std::endl;
 
@@ -30,12 +30,12 @@ int main( void )
 	// john.beRepaired(5);
 	// std::cout << std::endl;
 
-	// steven.attack("Francois");
-	// steven.takeDamage(60);
-	// steven.takeDamage(20);
-	// steven.attack("Francois");
-	// steven.guardGate();
-	// std::cout << std::endl;
+	steven.attack("Francois");
+	steven.takeDamage(60);
+	steven.takeDamage(20);
+	steven.attack("Francois");
+	steven.guardGate();
+	std::cout << std::endl;
 
 	michael.attack("Bertrand");
 	michael.takeDamage(30);
@@ -45,6 +45,8 @@ int main( void )
 
 	std::cout << std::endl;
 
+	std::cout << "FragTrap Michael copied in Bob" << std::endl;
+	std::cout << "Print Bob actions :" << std::endl;
 	FragTrap bob(michael);
 	bob.attack("Bertrand");
 	bob.takeDamage(30);

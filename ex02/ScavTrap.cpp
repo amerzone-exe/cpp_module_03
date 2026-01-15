@@ -6,7 +6,7 @@
 /*   By: jpiquet <jpiquet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/06 09:00:29 by jpiquet           #+#    #+#             */
-/*   Updated: 2026/01/14 15:51:06 by jpiquet          ###   ########.fr       */
+/*   Updated: 2026/01/15 10:54:47 by jpiquet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,12 +38,12 @@ ScavTrap::ScavTrap( ScavTrap const & src) : ClapTrap( src )
 }
 
 /*Assignation operator overload*/
-ScavTrap& ScavTrap::operator=(ScavTrap const & rhs)
+ScavTrap& ScavTrap::operator=(ScavTrap const & rightSide)
 {
-	if (this != &rhs)
+	if (this != &rightSide)
 	{
-		ClapTrap::operator=( rhs );
-		this->_gateKeep = rhs._gateKeep;
+		ClapTrap::operator=( rightSide );
+		this->_gateKeep = rightSide._gateKeep;
 	}
 	return *this;
 }

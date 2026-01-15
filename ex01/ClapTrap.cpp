@@ -6,7 +6,7 @@
 /*   By: jpiquet <jpiquet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/05 17:12:04 by jpiquet           #+#    #+#             */
-/*   Updated: 2026/01/14 13:49:33 by jpiquet          ###   ########.fr       */
+/*   Updated: 2026/01/15 10:53:49 by jpiquet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,14 +33,14 @@ ClapTrap::ClapTrap( ClapTrap const & src) : _name( src._name ), _hitPoint( src._
 }
 
 /*Assignation operator overload*/
-ClapTrap& ClapTrap::operator=( ClapTrap const & rhs )
+ClapTrap& ClapTrap::operator=( ClapTrap const & rightSide )
 {
-	if (this != &rhs)
+	if (this != &rightSide)
 	{
-		this->_name = rhs._name;
-		this->_hitPoint = rhs._hitPoint;
-		this->_energyPoint = rhs._energyPoint;
-		this->_attackDamage = rhs._attackDamage;
+		this->_name = rightSide._name;
+		this->_hitPoint = rightSide._hitPoint;
+		this->_energyPoint = rightSide._energyPoint;
+		this->_attackDamage = rightSide._attackDamage;
 	}
 	return *this;
 }

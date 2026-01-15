@@ -6,7 +6,7 @@
 /*   By: jpiquet <jpiquet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/05 17:04:06 by jpiquet           #+#    #+#             */
-/*   Updated: 2026/01/14 13:17:30 by jpiquet          ###   ########.fr       */
+/*   Updated: 2026/01/15 14:48:34 by jpiquet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,8 +27,7 @@ class ClapTrap
 		ClapTrap( void );
 		ClapTrap( std::string name );
 		ClapTrap( ClapTrap const & src );
-		/*"rhs" stands for **Right Side Hand** !*/
-		ClapTrap& operator=( ClapTrap const & rhs ); 
+		ClapTrap& operator=( ClapTrap const & rightSide ); 
 		~ClapTrap( void );
 
 		void		attack( const std::string& target );
